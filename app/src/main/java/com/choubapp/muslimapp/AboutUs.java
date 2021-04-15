@@ -4,19 +4,14 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
-//import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Switch;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-
 public class AboutUs extends AppCompatActivity {
-    private InterstitialAd mInterstitialAd;
-    private InterstitialAd mInterstitialAd2;
     SharedPreferences prefs;
     SharedPreferences.Editor mEditor;
     int x;
@@ -27,21 +22,6 @@ public class AboutUs extends AppCompatActivity {
         prefs = getSharedPreferences(THEME_KEY,0);
         x=getCurrentTheme(prefs);
         AboutUs.setCurrentTheme(this, x);
-
-        mInterstitialAd = new InterstitialAd(this);
-        // TO RE-SET
-        //mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //test
-        mInterstitialAd.setAdUnitId(getString(R.string.Interstitial_Settings));
-        mInterstitialAd.loadAd(new AdRequest.Builder()
-                .build());
-        mInterstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
-            @Override
-            public void onAdLoaded() {
-                mInterstitialAd.show();
-                super.onAdLoaded();
-            }
-        });
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         setSwitch(x);
@@ -53,19 +33,6 @@ public class AboutUs extends AppCompatActivity {
         overridePendingTransition(0, 0);
         startActivity(intent);
         overridePendingTransition(0, 0);
-        mInterstitialAd2 = new InterstitialAd(this);
-        // TO RE-SET
-        //mInterstitialAd2.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //test
-        mInterstitialAd2.setAdUnitId(getString(R.string.Interstitial_BacktohomefromSettings));
-        mInterstitialAd2.loadAd(new AdRequest.Builder()
-                .build());
-        mInterstitialAd2.setAdListener(new com.google.android.gms.ads.AdListener() {
-            @Override
-            public void onAdLoaded() {
-                mInterstitialAd2.show();
-                super.onAdLoaded();
-            }
-        });
         finish();
     }
 

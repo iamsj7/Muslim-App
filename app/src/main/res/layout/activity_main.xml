@@ -684,14 +684,4 @@
         </LinearLayout>
     </TableLayout>
     </ScrollView>
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewmain"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/Home_Banner">
-    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

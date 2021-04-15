@@ -21,13 +21,6 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static android.view.View.INVISIBLE;
 
@@ -41,7 +34,6 @@ public class QiblaFinder extends AppCompatActivity {
     private float currentAzimuth;
     SharedPreferences prefs;
     GPSTracker gps;
-    private InterstitialAd mInterstitialAd;
 
 
     @Override
@@ -62,22 +54,6 @@ public class QiblaFinder extends AppCompatActivity {
         text_down =  findViewById(R.id.text_down);
         arrowViewQiblat.setVisibility(INVISIBLE);
         arrowViewQiblat.setVisibility(View.GONE);
-
-
-
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.Interstitial_Qibla));
-        mInterstitialAd.loadAd(new AdRequest.Builder()
-                .build());
-        mInterstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
-            @Override
-            public void onAdLoaded() {
-                mInterstitialAd.show();
-                super.onAdLoaded();
-            }
-        });
-
 
         setupCompass();
     }
