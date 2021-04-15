@@ -1,15 +1,11 @@
 package com.choubapp.muslimapp;
 
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,11 @@
 package com.choubapp.muslimapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PrivacyPolicy extends AppCompatActivity {
     private WebView webView;

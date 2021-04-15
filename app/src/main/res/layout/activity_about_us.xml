@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/switchnightmode"
-            android:layout_marginLeft="7dp"
+            android:layout_marginEnd="7dp"
             android:onClick="SwitchedtoNightMode"/>
         <TextView
             android:layout_width="match_parent"

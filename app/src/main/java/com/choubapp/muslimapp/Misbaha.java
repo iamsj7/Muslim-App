@@ -2,18 +2,16 @@ package com.choubapp.muslimapp;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class Misbaha extends AppCompatActivity {
     TextView showcounter;
     int count;
-    private AdView mAdView;
 
 
     @Override
@@ -23,10 +21,6 @@ public class Misbaha extends AppCompatActivity {
         AboutUs.setCurrentTheme(this, thm);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_misbaha);
-        mAdView = findViewById(R.id.adViewww);
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        mAdView.loadAd(adRequest);
         SharedPreferences sp = getSharedPreferences("tallycounter", Activity.MODE_PRIVATE);
         int myIntValue = sp.getInt("counter", 0);
         showcounter=findViewById(R.id.counter_text);

@@ -1,6 +1,7 @@
 package com.choubapp.muslimapp;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,8 +10,6 @@ import android.content.SharedPreferences;
 
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -20,9 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
    // private ArrayList<String> mPrayerTimes,mRetrievedPrayerTimes;
     TextView mFajr,mDuhur,mAsr,mMaghrib,mIsha,mCity;
     ScrollView content;
-    private AdView mAdView;
 
     //String PrayerCity = "kenitra";
 
@@ -62,34 +58,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), getString(R.string.internetlost), Toast.LENGTH_SHORT).show();
             LoadPreviousSalatData();
         }
-
-        mAdView = findViewById(R.id.adViewmain);
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                Resources r = getResources();
-                int px = (int) TypedValue.applyDimension(
-                        TypedValue.COMPLEX_UNIT_DIP,
-                        50,
-                        r.getDisplayMetrics()
-                );
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT
-                );
-                content.setLayoutParams(params);
-                params.setMargins(0, 0, 0, px);
-            }
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Log.d("onAdFailedToLoad", "This is why: "+errorCode);
-            }
-        });
-
         }
 
     public void NotifMessages(){

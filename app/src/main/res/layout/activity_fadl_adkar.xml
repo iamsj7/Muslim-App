@@ -48,7 +48,7 @@
            android:shadowRadius="1"
            android:text="@string/menu_fadl2"/>
    </LinearLayout>
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
